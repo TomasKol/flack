@@ -1,0 +1,126 @@
+%centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  @extend %centered;
+  width: 100%;
+  background-color: transparent;
+  background: url("back.png");
+  font-family: calibri;
+}
+
+.btn, .form-control {
+  border-radius: 10% 20% 10% 20%;
+}
+
+nav {
+  border-bottom: 1px solid rgba(23, 162, 184, 1);
+}
+
+//'add member' link in navbar
+#add-member {
+  color: rgba(23, 162, 184, 1);
+}
+#add-member:hover {
+  font-weight: bold;
+}
+
+//the main part - chatroom
+#chatroom {
+  @extend %centered;
+  width: 90%;
+  max-width: 1500px;
+  min-width: 720px;
+  height: calc(100vh - 60px);
+  min-height: 50%;
+}
+
+.right-divider {
+  border-right: 1px dotted  rgba(23, 162, 184, 0.5);
+  border-radius: 0 50px 0px 0;
+  padding-right: 10px;
+}
+
+//list of chatrooms and create room (the left panel)
+ul {
+  padding-left: 10px;
+}
+li {
+  list-style-type: none;
+}
+li:hover {
+  font-weight: bold;
+}
+
+.scrollable { //applies to #messages as well
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  max-height: calc(100vh - 120px);
+}
+
+#chatroom-management {
+  min-width: 200px;
+  max-width: 250px;
+}
+
+#create-room {
+  background: url("back.png");
+}
+
+//send message form and create room
+.bottom-container {
+  position: relative;
+}
+
+.bottom {
+  @extend %centered;
+  position: absolute;
+  bottom: 0px;
+  padding-right: 25px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+//message-board (the right panel)
+%box {
+  border-radius: 5px 10px 5px 10px;
+  margin: 5px;
+  padding: 5px;
+  width: 75%;
+  min-width: 300px;
+  box-shadow: 0 1px 5px rgba(23, 162, 184, 0.2);
+}
+
+%message {
+  @extend %box;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: solid 1px rgba(23, 162, 184, 0.5);
+}
+
+.my-message {
+  @extend %message;
+  margin-left: 25%;
+  background-image: linear-gradient(to left, rgba(35, 218, 247, 0.1), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 1));
+}
+
+.others-message {
+  @extend %message;
+  margin-right: 25%;
+  background-image: linear-gradient(to right, rgba(35, 218, 247, 0.1), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 1));
+}
+
+.message-user {
+  font-weight: bold;
+}
+
+.message-timestamp {
+  width: 50px;
+  text-align: right;
+}
